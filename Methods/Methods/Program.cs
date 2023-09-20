@@ -25,7 +25,7 @@ namespace Methods
 
 
 
-            Console.WriteLine("Ryan Studios");
+            Console.WriteLine("Ryan Studios"); 
             Console.WriteLine("--------------------------");
             Console.WriteLine("The Best Game of All Time");
             Console.WriteLine("--------------------------");
