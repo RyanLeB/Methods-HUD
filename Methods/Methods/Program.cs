@@ -23,9 +23,8 @@ namespace Methods
         {
 
 
-            
-            
-            
+
+
             Console.WriteLine("Ryan Studios");
             Console.WriteLine("--------------------------");
             Console.WriteLine("The Best Game of All Time");
@@ -48,10 +47,6 @@ namespace Methods
             monsterhealth = 100;
             percentile = 30.2f;
 
-            static void Exp();
-            {
-                exp = exp + 100;
-            }
 
 
             Console.WriteLine();
@@ -124,7 +119,7 @@ namespace Methods
             Console.WriteLine();
             Console.WriteLine();
 
-            Exp();
+            GainEXP();
 
             Console.WriteLine("Exp: " + exp);
 
@@ -136,7 +131,45 @@ namespace Methods
 
 
         }
+
+        static void showHUD()
+        {
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine("Name: " + gamerTag + "        " + "Lives: " + lives + "   |   Enemy: Monster" + "      Health: " + monsterhealth);
+            Console.WriteLine("Health: " + health + "        " + "Shield: " + shield + "  |");
+            Console.WriteLine("--------------------------------");
+        }
+    
+        static void TakeDamageShield()
+        {
+            shield = shield - monsterattack;
+        }
+
+        static void TakeDamageHealth()
+        {
+            health = health - monsterattack;
+        }
+    
+        static void DealDamage()
+        {
+            monsterhealth = monsterhealth - 100;
+        }
+    
+        static void GainEXP()
+        {
+            exp = exp + enemyValue;
+        }
+
+        static void Completion()
+        {
+            Console.WriteLine();
+            Console.WriteLine(percentile + " % of area completed");
+        }
+
+
     }
-}        
-        
+
+}       
+
+                
  
