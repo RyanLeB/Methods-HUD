@@ -10,6 +10,11 @@ namespace Methods
     {
         static void Main(string[] args)
         {
+
+
+            
+            
+            
             Console.WriteLine("Ryan Studios");
             Console.WriteLine("--------------------------");
             Console.WriteLine("The Best Game of All Time");
@@ -40,6 +45,10 @@ namespace Methods
             monsterhealth = 100;
             percentile = 30.2f;
 
+            static void Exp();
+            {
+                exp = exp + 100;
+            }
 
             Console.WriteLine();
             Console.WriteLine("--------------------------------");
@@ -116,7 +125,7 @@ namespace Methods
             Console.WriteLine();
             Console.WriteLine();
 
-            exp = exp + enemyValue;
+            Exp();
 
             Console.WriteLine("Exp: " + exp);
 
@@ -129,7 +138,4 @@ namespace Methods
     }
 }        
         
-        }
-
-    }
-}
+ 
