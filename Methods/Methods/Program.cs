@@ -8,8 +8,23 @@ namespace Methods
 {
     internal class Program
     {
+        static int exp;
+        static int enemyValue;
+        static string gamerTag;
+        static float percentile; // 0.0 , 100.0
+        static int shield;
+        static int health;
+        static int lives;
+        static int monsterattack;
+        static int monsterhealth;
+        
+        
         static void Main(string[] args)
         {
+
+
+
+
             Console.WriteLine("Ryan Studios");
             Console.WriteLine("--------------------------");
             Console.WriteLine("The Best Game of All Time");
@@ -19,17 +34,9 @@ namespace Methods
 
 
             // declaring score variable to be integer type
-            int exp;
-            int enemyValue;
-            string gamerTag;
-            float percentile; // 0.0 , 100.0
-            int shield;
-            int health;
-            int lives;
-            int monsterattack;
-            int monsterhealth;
 
             // initializing 
+
             health = 100;
             shield = 100;
             enemyValue = 250;
@@ -41,12 +48,10 @@ namespace Methods
             percentile = 30.2f;
 
 
-            Console.WriteLine();
-            Console.WriteLine("--------------------------------");
-            Console.WriteLine("Name: " + gamerTag + "        " + "Lives: " + lives); ;
 
-            Console.WriteLine("--------------------------------");
-            Console.WriteLine("Health: " + health + "        " + "Shield: " + shield);
+            Console.WriteLine();
+
+            showHUD();
 
             Console.WriteLine();
             Console.WriteLine();
@@ -61,21 +66,20 @@ namespace Methods
             Console.WriteLine("Battle Starting!!!");
             Console.WriteLine("--------------------------------");
             Console.WriteLine();
-            Console.WriteLine("--------------------------------");
-            Console.WriteLine("Name: " + gamerTag + "        " + "Lives: " + lives + "   |   Enemy: Monster" + "      Health: " + monsterhealth);
-            Console.WriteLine("Health: " + health + "        " + "Shield: " + shield + " |");
-            Console.WriteLine("--------------------------------");
+            
+            showHUD();
+            
             Console.WriteLine("--------------------------------");
             Console.WriteLine("The wild Monster uses Rising Cut!");
             Console.WriteLine("--------------------------------");
-            Console.WriteLine(" - 10 !");
+            Console.WriteLine(" It deals 10 damage !");
             Console.WriteLine();
-            shield = shield - monsterattack;
+
+            TakeDamageShield();
+
             Console.WriteLine();
-            Console.WriteLine("--------------------------------");
-            Console.WriteLine("Name: " + gamerTag + "        " + "Lives: " + lives + "   |   Enemy: Monster" + "      Health: " + monsterhealth);
-            Console.WriteLine("Health: " + health + "        " + "Shield: " + shield + "  |");
-            Console.WriteLine("--------------------------------");
+
+            showHUD();
 
 
 
@@ -93,22 +97,21 @@ namespace Methods
             Console.WriteLine("--------------------------------");
             Console.WriteLine("It's a critical hit!");
             Console.WriteLine("--------------------------------");
-            Console.WriteLine(" -  100 !");
+            Console.WriteLine(" It deals 100 damage !");
             Console.WriteLine();
-            Console.WriteLine("-------------------------------");
-            monsterhealth = monsterhealth - 100;
 
-            Console.WriteLine("Name: " + gamerTag + "        " + "Lives: " + lives + "   |   Enemy: Monster" + "      Health:" + monsterhealth);
-            Console.WriteLine("Health: " + health + "        " + "Shield: " + shield + "  |");
-            Console.WriteLine("--------------------------------");
+            
+            DealDamage();
+
+            showHUD();
+
+            
             Console.WriteLine();
             Console.WriteLine("Victory!, You've been awarded " + enemyValue + "Exp.");
 
             Console.WriteLine();
-            Console.WriteLine("--------------------------------");
-            Console.WriteLine("Name: " + gamerTag + "        " + "Lives: " + lives + "   |  ");
-            Console.WriteLine("Health: " + health + "        " + "Shield: " + shield + "  |");
-            Console.WriteLine("--------------------------------");
+            
+            showHUD();
 
 
 
@@ -116,9 +119,11 @@ namespace Methods
             Console.WriteLine();
             Console.WriteLine();
 
-            exp = exp + enemyValue;
+            GainEXP();
 
             Console.WriteLine("Exp: " + exp);
+
+            Completion();
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit");
@@ -126,10 +131,45 @@ namespace Methods
 
 
         }
-    }
-}        
-        
+
+        static void showHUD()
+        {
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine("Name: " + gamerTag + "        " + "Lives: " + lives + "   |   Enemy: Monster" + "      Health: " + monsterhealth);
+            Console.WriteLine("Health: " + health + "        " + "Shield: " + shield + "  |");
+            Console.WriteLine("--------------------------------");
+        }
+    
+        static void TakeDamageShield()
+        {
+            shield = shield - monsterattack;
         }
 
+        static void TakeDamageHealth()
+        {
+            health = health - monsterattack;
+        }
+    
+        static void DealDamage()
+        {
+            monsterhealth = monsterhealth - 100;
+        }
+    
+        static void GainEXP()
+        {
+            exp = exp + enemyValue;
+        }
+
+        static void Completion()
+        {
+            Console.WriteLine();
+            Console.WriteLine(percentile + " % of area completed");
+        }
+
+
     }
-}
+
+}       
+
+                
+ 
